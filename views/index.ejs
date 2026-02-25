@@ -1,0 +1,56 @@
+<div class="hero">
+    <h1>Discover Amazing <span>Events</span></h1>
+    <p>Find and join the most exciting events happening near you.</p>
+</div>
+
+<div class="events-grid">
+    <% if (events && events.length> 0) { %>
+        <% events.forEach(event=> { %>
+
+            <a href="/events/<%= event._id %>" class="event-card-link">
+                <div class="event-card">
+
+                    <div class="event-image">
+                        <img src="<%= event.image %>" alt="<%= event.title %>">
+                        <span class="category-badge">
+                            <%= event.category %>
+                        </span>
+                    </div>
+
+                    <div class="event-content">
+                        <p class="event-date">
+                            <%= event.date.toDateString() %>
+                        </p>
+
+                        <!-- Removed nested anchor here -->
+                        <h3>
+                            <%= event.title %>
+                        </h3>
+
+                        <p class="event-organizer">
+                            By <%= event.organizer.name %>
+                        </p>
+
+                        <div class="event-footer">
+                            <span class="event-location">
+                                <%= event.location %>
+                            </span>
+
+                            <div class="event-stats">
+                                <span>❤️ <%= event.likes.length %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+            <% }) %>
+                <% } else { %>
+                    <div class="no-events">
+                        <p>No events found. Be the first to
+                            <a href="/events/create">create one</a>!
+                        </p>
+                    </div>
+                    <% } %>
+</div>

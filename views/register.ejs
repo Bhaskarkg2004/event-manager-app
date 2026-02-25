@@ -1,0 +1,21 @@
+<div class="auth-card">
+    <h2>Register</h2>
+    <form action="/auth/register" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Create a password">
+        </div>
+        <button type="submit" class="btn">Register</button>
+    </form>
+    <div class="auth-footer">
+        <p>Already have an account? <a href="/auth/login">Login</a></p>
+    </div>
+</div>
